@@ -1,0 +1,40 @@
+/*Inhoud*/
+.grid-container1{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+    'Who What'
+    'dunno think';
+    height: 100vh;
+    width: 90%;
+    margin-left: 5em;
+    margin-right: 5em;
+    margin-top: 3em;
+
+}
+
+.whoIAm{
+    grid-area: Who;
+    margin-right: 0.5em;
+    background-color: #f6d2f3;
+}
+.card-img-top{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.whatIsThis{
+    grid-area: What;
+    padding-left: 1.5em;
+    margin-left: 0.5em;
+    background-color: #f6d2f3;
+}
+ .imgDiv{
+     height: 65%;
+     background-image: url('./images/mepic4.png');
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+ }
