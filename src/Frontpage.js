@@ -6,10 +6,10 @@ import React from 'react';
 
 
 function frontpage(){
+
     return(
         <div className="frontPage">
             <Header />
-
             <div className="grid-container1">
                 <div className="card whoIAm">
                     <div className="imgDiv"></div>
