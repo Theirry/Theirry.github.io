@@ -42,7 +42,7 @@ Photo by <a href="https://unsplash.com/@anasalshanti?utm_source=unsplash&utm_med
 
 }
 .navlogo{
-    margin-left: 60px;
+    margin-left: 10px;
     margin-right: 0px;
     margin-bottom: 0px;
 
@@ -57,7 +57,6 @@ Photo by <a href="https://unsplash.com/@anasalshanti?utm_source=unsplash&utm_med
     padding-right: 15px;
     padding-top: 22px;
     padding-bottom: 22px;
-
 }
 .navitem:hover{
     background-color: red;
@@ -66,9 +65,7 @@ Photo by <a href="https://unsplash.com/@anasalshanti?utm_source=unsplash&utm_med
     color: white;
     text-decoration: none;
     font-size: 1.2em;
-
 }
-
 /*Header*/
 .h1{
     align-self: center;
