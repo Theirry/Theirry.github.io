@@ -21,6 +21,12 @@ export default function Header(){
                     <li className={"navitem"}>
                         <Link className={"navlink"} to="/projects"> <FaRaspberryPi style={{marginRight: '10px', marginBottom: '5'}}/> Projects</Link>
                     </li>
+                    <li className={"navitem"}>
+                        <Link className={"navLink"} to="/register">Register</Link>
+                    </li>
+                    <li className={"navitem"}>
+                        <Link className={"navLink"} to="/login">Login</Link>
+                    </li>
                 </ul>
             </nav>
             <h1 className="h1" style={{color: "white"}}>Welcome To My Portfolio</h1>

@@ -11,6 +11,8 @@ import './App.css';
 import Frontpage from "./Frontpage";
 import Projectpage from "./Projectpage";
 import Header from "./partials/Header";
+import Register from "./authentication/Register";
+import Login from "./authentication/Login";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
             <Routes>
                 <Route path="/" exact element=<Frontpage/> />
                 <Route path="/projects" element=<Projectpage/> />
+                <Route path={"/register"} element={<Register />} />
+                <Route path={"/login"} element={<Login />} />
             </Routes>
         </div>
       </Router>
