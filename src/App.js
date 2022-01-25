@@ -13,6 +13,7 @@ import Projectpage from "./Projectpage";
 import Header from "./partials/Header";
 import Register from "./authentication/Register";
 import Login from "./authentication/Login";
+import Contact from "./Contactpage";
 
 function App() {
   return (
@@ -20,10 +21,11 @@ function App() {
         <div className="App">
             <Header />
             <Routes>
-                <Route path="/" exact element=<Frontpage/> />
-                <Route path="/projects" element=<Projectpage/> />
+                <Route path="/" exact element={<Frontpage/>} />
+                <Route path="/projects" element={<Projectpage/>} />
                 <Route path={"/register"} element={<Register />} />
                 <Route path={"/login"} element={<Login />} />
+                <Route path={"/contactMe"} element={<Contact />} />
             </Routes>
         </div>
       </Router>
