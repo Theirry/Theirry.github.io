@@ -21,8 +21,15 @@ function frontpage(){
     return(
         <div className="frontPage">
             <div className="grid-container1">
+
+                <div className={"intro"}>
+                    <h6 className={"introduction"}>Hello, I am</h6>
+                    <h1 className={"introduction"}>Thierry</h1>
+                    <h1 className={"introduction"} >Klougbo</h1>
+                </div>
+
                 <Card  className="card-body card whoIAm">
-                        <Card.Img className="imgDiv"/>
+
                         <Card.Title className="card-title">Who am I?</Card.Title>
                         <p className="card-text">As you may have noticed, my name is Thierry Klougbo. I am currently 22 years old, and originate from Togo (Africa)
                             even though I have lived in Belgium for 13 years now.
@@ -31,10 +38,14 @@ function frontpage(){
                             Software Developer.
                             After graduating -in 2023- I am planning on working and meanwhile study for another bachelor.
                         </p>
-                        <Card.Link href="https://www.linkedin.com/in/thierry-klougbo-880b071b1/" target="_blank" className="btn btn-primary" style={{width:'10%', padding:'0'}}>
+                        {/*<Card.Link href="https://www.linkedin.com/in/thierry-klougbo-880b071b1/" target="_blank" className="btn btn-primary" style={{width:'10%', padding:'0'}}>
                             <FaLinkedin style={{height:'2em', width:'2em'}}/>
-                        </Card.Link>
+                        </Card.Link>*/}
                 </Card>
+
+                <div className={"pictureMe"}>
+
+                </div>
 
                 <Card className="card-body card whatIsThis">
                         <Card.Title className="card-title">So, what is this?</Card.Title>

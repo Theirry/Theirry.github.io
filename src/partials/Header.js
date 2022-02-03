@@ -12,10 +12,11 @@ export default function Header(){
     return(
         <div className="headdiv">
             <nav className="navibar">
-                <figure className="navlogo">
+                {/*<figure className="navlogo">
                     <img className="navlogoimage" src={logoimg} alt="Conpanny logo"/>
-                </figure>
-                <ul className="navibar">
+                </figure>*/}
+                <h1 className="pageTitle" style={{color: "white"}}>Portfolio</h1>
+                <ul className="linkbar">
                     <li className={"navitem"}>
                         <Link className={"navlink"} to="/"> <FaHome style={{marginRight: '10px', marginBottom: '5'}}/> Home</Link>
                     </li>
@@ -33,7 +34,7 @@ export default function Header(){
                     </li>*/}
                 </ul>
             </nav>
-            <h1 className="h1" style={{color: "white"}}>Welcome To My Portfolio</h1>
+
         </div>
     )
 }
