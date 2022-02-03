@@ -1,6 +1,7 @@
 
 import React from 'react';
-import "./Contactpage.css"
+import "./Contactpage.css";
+import {FaInstagram, FaFacebookF, FaLinkedinIn} from "react-icons/fa";
 
 export default function contactPage(){
     return(
@@ -47,6 +48,20 @@ export default function contactPage(){
 
                 <button type="submit" className="btn btn-primary">Hire me</button>
             </form>
+
+
+            <div className={"socials"}>
+                <p className={"orparagraf"}>
+                    <h1>Or</h1>
+                    +32 48 78 22 98 | thierryklougbo@gmail.com
+                </p>
+
+                <div className={"socialIcons"}>
+                    <a href="https://www.linkedin.com/in/thierry-klougbo-880b071b1/" target={"_blank"}><FaLinkedinIn className={"icon"}/></a>
+                    <a href="https://www.instagram.com/thigorro/" target="_blank"><FaInstagram className={"icon"}/></a>
+                    <a href="https://www.facebook.com/profile.php?id=100008328725064" target={"_blank"}><FaFacebookF className={"icon"}/></a>
+                </div>
+            </div>
         </div>
     )
 }
