@@ -14,6 +14,7 @@ import Header from "./partials/Header";
 import Register from "./authentication/Register";
 import Login from "./authentication/Login";
 import Contact from "./Contactpage";
+import Pricing from "./Pricing";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
                 <Route path={"/register"} element={<Register />} />
                 <Route path={"/login"} element={<Login />} />
                 <Route path={"/contactMe"} element={<Contact />} />
+                <Route path={"/pricing"} element={<Pricing />}/>
             </Routes>
         </div>
       </Router>

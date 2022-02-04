@@ -2,9 +2,9 @@
 import "./Header.css";
 import logoimg from '../images/portfolio logo.png';
 import React, {useState} from 'react';
-import { Link }from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import {FaHome, FaRaspberryPi } from "react-icons/fa";
-import {MdContactPage} from "react-icons/md"
+import {MdContactPage, MdOutlinePriceCheck} from "react-icons/md"
 
 
 export default function Header(){
@@ -22,6 +22,9 @@ export default function Header(){
                     </li>
                     <li className={"navitem"}>
                         <Link className={"navlink"} to="/projects"> <FaRaspberryPi style={{marginRight: '10px', marginBottom: '5'}}/> Projects</Link>
+                    </li>
+                    <li className={"navitem"}>
+                        <Link className={"navlink"} to={"/pricing"}><MdOutlinePriceCheck style={{marginRight: '10px', marginBottom: '5'}}/>Pricing</Link>
                     </li>
                     <li className={"navitem"}>
                         <Link className={"navlink"} to="/contactMe"><MdContactPage style={{marginRight: '10px', marginBottom: '5'}}/>Contact Me</Link>
