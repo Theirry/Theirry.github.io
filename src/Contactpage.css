@@ -58,6 +58,8 @@ input{
     flex-direction: column;
     align-items: center;
     gap: 2em;
+
+
 }
 .orparagraf{
     color: white;
@@ -67,6 +69,7 @@ input{
     flex-direction: row;
     align-items: center;
     gap: 3em;
+    margin-bottom: 0.75em;
 }
 .icon{
     width: 2em;

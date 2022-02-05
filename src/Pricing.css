@@ -31,6 +31,7 @@
 
 .prices{
     grid-area: Prices;
+
 }
 .grid-container3{
     display: grid;
@@ -75,3 +76,10 @@
 .arrowRight:hover{
     background-color: rgba(0, 0, 0, 0.15);
 }
+
+
+/**/
+/*
+#pricelist li:nth-child(2){
+    transform: scale(1.05, 1.05);
+}*/
