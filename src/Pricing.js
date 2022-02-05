@@ -5,7 +5,20 @@ import  {Button, Card}  from 'react-bootstrap';
 import "./Pricing.css" //I am stupid
 
 // Freelance front-end dev: https://sanderlangendoen.nl/tarieven-freelance-frontend-ontwikkelaar/
-//
+//https://www.nationaleberoepengids.nl/android-developer#:~:text=Een%20Android%20Developer%20kan%20rekenen,van%20zijn%20leeftijd%20en%20ervaring.
+
+const cardArray = [["Web front-end", 40, 60], ["Web back-end", 0, 0], ["Android application backend", 17, 25]];
+
+function makeCards(){
+    return cardArray.map((el, i) =>
+        <li >
+            <Card className={"pricerange"} id={`pricerange${i}`}>
+                <Card.Title className={"class-title ct"}>{cardArray[i][0]}</Card.Title>
+                <h4>{<MdEuro/>}{cardArray[i][1]} - {<MdEuro/>}{cardArray[i][2]}/ hour</h4>
+            </Card>
+        </li>
+    )
+}
 
 export default function Pricing(){
     return(
@@ -18,28 +31,9 @@ export default function Pricing(){
                 <div className={"prices"}>
                     <h1 style={{margin: "0.5em 0 0.75em 0"}}>Standard Pricing</h1>
                     <p></p>
-                    <ul className={"grid-container3"}>
+                    <ul className={"grid-container3"} style={{height:"80%"}}>
 
-                        <li>
-                            <Card className={"pricerange"} id={"pricerange1"}>
-                                <Card.Title className={"class-title ct"}>Web front-end</Card.Title>
-                                <h4><MdEuro/>40 - <MdEuro/>60 / hour</h4>
-                            </Card>
-                        </li>
-
-                        <li>
-                            <Card className={"pricerange"} id={"pricerange2"}>
-                                <Card.Title className={"class-title ct"}>Web back-end</Card.Title>
-                                <h4></h4>
-                            </Card>
-                        </li>
-
-                        <li>
-                            <Card className={"pricerange"} id={"pricerange3"}>
-                                <Card.Title className={"class-title ct"}>Android application backend</Card.Title>
-                                <h4><MdEuro/>17 - <MdEuro/>25 / hour</h4>
-                            </Card>
-                        </li>
+                        {makeCards()}
 
                     </ul>
                 </div>

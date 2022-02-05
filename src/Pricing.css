@@ -44,17 +44,17 @@
     padding: 0;
 
 }
-#pricerange1{
+#pricerange0{
     grid-area: PR1;
-    height: 80%;
+    height: 100%;
+}
+#pricerange1{
+    grid-area: PR2;
+    height: 100%;
 }
 #pricerange2{
-    grid-area: PR2;
-    height: 80%;
-}
-#pricerange3{
     grid-area: PR3;
-    height: 80%;
+    height: 100%;
     background-color: white;
 }
 .ct{
