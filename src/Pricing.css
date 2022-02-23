@@ -28,10 +28,8 @@
 
 }
 
-
 .prices{
     grid-area: Prices;
-
 }
 .grid-container3{
     display: grid;
@@ -45,24 +43,28 @@
     padding: 0;
 
 }
-#pricerange0{
+#pricerangepr1{
     grid-area: PR1;
     height: 100%;
 }
-#pricerange1{
+#pricerangepr2{
     grid-area: PR2;
     height: 100%;
 }
-#pricerange2{
+#pricerangepr3{
     grid-area: PR3;
     height: 100%;
-    background-color: white;
 }
+
 .ct{
     color: #506d96;
 }
-.pricerange{
+.listitem{
     background-color: white;
+}
+.h4cards{
+    height: fit-content;
+    color: black;
 }
 
 .arrowRight{

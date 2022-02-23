@@ -8,21 +8,34 @@ import "./Pricing.css"
 // Freelance front-end dev: https://sanderlangendoen.nl/tarieven-freelance-frontend-ontwikkelaar/
 //https://www.nationaleberoepengids.nl/android-developer#:~:text=Een%20Android%20Developer%20kan%20rekenen,van%20zijn%20leeftijd%20en%20ervaring.
 
-const cardArray = [["Web front-end", 40, 60, false], ["Web back-end", 0, 0, true], ["Android application backend", 17, 25, false]];
+let priceR1 = {
+    "id": "pr1",
+    "title": "Web front-end",
+    "price1": 40,
+    "price2": 60,
+    "selected": false
+}
+let priceR2 = {
+    "id": "pr2",
+    "title": "Web back-end",
+    "price1": 0,
+    "price2": 0,
+    "selected": true
+}
+let priceR3 = {
+    "id": "pr3",
+    "title": "Android application backend",
+    "price1": 17,
+    "price2": 25,
+    "selected": false
+}
+
+const cardArray = [priceR1, priceR2, priceR3];
 let value = 1
 let selected = 0
 
-const makeCards = () =>{
 
-    return cardArray.map((el, i) =>
-        <li id={`${i}listItem`} key={`${i}`}>
-            <Card className={"pricerange"} id={`pricerange${i}`}>
-                <Card.Title className={"class-title ct"}>{cardArray[i][0]}</Card.Title>
-                <h4>{<MdEuro/>}{cardArray[i][1]} - {<MdEuro/>}{cardArray[i][2]}/ hour</h4>
-            </Card>
-        </li>
-    )
-}
+
 
 const setSelected = (valueProp) => {
     console.log(`${valueProp}listItem`)
@@ -30,9 +43,9 @@ const setSelected = (valueProp) => {
 }
 
 const resetSelected = () => {
-    document.getElementById(`0listItem`).style.transform = "scale(1, 1)"
-    document.getElementById(`1listItem`).style.transform = "scale(1, 1)"
-    document.getElementById(`2listItem`).style.transform = "scale(1, 1)"
+    document.getElementById(`pr1`).style.transform = "scale(1, 1)"
+    document.getElementById(`pr2`).style.transform = "scale(1, 1)"
+    document.getElementById(`pr3`).style.transform = "scale(1, 1)"
 }
 
 function Pricing(){
@@ -65,8 +78,18 @@ function Pricing(){
                 <div id="prices" className={"prices"}>
                     <h1 style={{margin: "0.5em 0 1.25em 0"}}>Standard Pricing</h1>
                     <p></p>
+
                     <ul id="pricelist" className={"grid-container3"} style={{height:"80%"}}>
-                        {makeCards()}
+                        {
+                            cardArray.map(item =>
+                            <motion.li id={item.id} key={item.id} class={"listitem"}>
+                                <motion.div className={"pricerange"} id={"pricerange"+item.id}>
+                                    <motion.div className={"class-title ct"}>{item.title}</motion.div>
+                                    <motion.h4 className={"h4cards"}>{<MdEuro/>}{item.price1} - {<MdEuro/>}{item.price2}/ hour</motion.h4>
+                                </motion.div>
+                            </motion.li>
+                        )
+                        }
                     </ul>
                 </div>
 
