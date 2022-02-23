@@ -1,7 +1,7 @@
 
 import React, {useState} from 'react';
 import {Button, Card}  from 'react-bootstrap';
-import {AnimatePresence, motion} from 'framer-motion'
+import {animate, AnimatePresence, motion} from 'framer-motion'
 import "./Frontpage.css";
 
 const card1= {
@@ -43,9 +43,18 @@ function Frontpage(){
     const [itemClass, setItemClass] = useState("")
     const [content, setContent] = useState("")
 
+
     return(
         <div className="frontPage">
-            <div className="grid-container1">
+            <div id={'outer-container'} className="grid-container1"
+            onClick={(e) => {
+                if(e.target !== document.getElementById(selectedId+"hovered")
+                    && e.target !== document.getElementById("card1")
+                    && e.target !== document.getElementById("card2")){
+                    setSelectedId(null)
+                }
+
+            }}>
 
                 <div className={"intro"}>
                     <h6 className={"introduction"}>Hello, I am</h6>
@@ -54,14 +63,16 @@ function Frontpage(){
                 </div>
 
                 {cardContent.map(item => (
-                    <motion.div  id={item.id} layoutId={item.id} className={"card-body card " + item.class}
+                    <motion.div  id={item.id} layoutId={item.id+"layout"} className={"card-body card " + item.class}
                                  onClick={() => {
                         setTitle(item.title);
                         setContent(item.text);
                         setItemClass(item.class);
+                        document.getElementById(item.id).setAttribute("animate", "{{opacity: 0}}")
                         setSelectedId(item.id);
 
-                    }}>
+                    }}
+                    >
                         <motion.div className="card-title">{item.title}</motion.div>
                     </motion.div>
                 ))}
@@ -70,20 +81,20 @@ function Frontpage(){
                 {/*animate={{x: [0,100,0]}} transition={{ease: "easeOut", duration:1}}*/}
                 <AnimatePresence>
                     {selectedId && (
-                        <motion.div  id={selectedId} layoutId={selectedId} className={"card-body card hoveredCard"}
+                        <motion.div  id={selectedId+"hovered"} layoutId={selectedId+"layout"} className={"card-body card hoveredCard"}
+                                     key={selectedId}
                                      initial={{ opacity: 0}}
                                      animate={{ opacity: 1}}
                                      exit={{ opacity: 0}}
                         >
                             <motion.div className="card-title">{title}</motion.div>
                             <motion.p className="card-text">{content}</motion.p>
-                            <motion.button onClick={() => setSelectedId(null)} />
+                            {/*<motion.button onClick={() => setSelectedId(null)} >Close</motion.button>*/}
                         </motion.div>
+
                     )}
                 </AnimatePresence>
             </div>
-
-
         </div>
 
 
