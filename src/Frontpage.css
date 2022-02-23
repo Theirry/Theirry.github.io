@@ -75,4 +75,21 @@ h1.introduction{
     color: white;
 }
 
+/**Hovering cards**/
+.hoveredCard{
+    background: linear-gradient(to top left, #506d96  0%, #8a4571 100%);
+    color: white;
+    border: 1px solid #000000;
+
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+
+    height: fit-content;
+    width: 50em;
+    margin: auto;
+}
+
 

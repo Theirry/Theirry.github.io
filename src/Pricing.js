@@ -1,7 +1,8 @@
 
 import React, {useRef, useState} from 'react';
 import {MdOutlineArrowBackIosNew, MdOutlineArrowForwardIos, MdEuro} from "react-icons/md"
-import  {Button, Card}  from 'react-bootstrap';
+import {Button, Card}  from 'react-bootstrap';
+import {motion} from 'framer-motion';
 import "./Pricing.css"
 
 // Freelance front-end dev: https://sanderlangendoen.nl/tarieven-freelance-frontend-ontwikkelaar/
