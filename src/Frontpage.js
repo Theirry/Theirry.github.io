@@ -1,7 +1,7 @@
 
 import React, {useState} from 'react';
 import {Button, Card}  from 'react-bootstrap';
-import {animate, AnimatePresence, motion} from 'framer-motion'
+import {useIsPresent, AnimatePresence, motion} from 'framer-motion'
 import "./Frontpage.css";
 
 const card1= {
@@ -43,14 +43,19 @@ function Frontpage(){
     const [itemClass, setItemClass] = useState("")
     const [content, setContent] = useState("")
 
+    let stillPresent = false
+    //&& e.target !== document.getElementById("card1")
+    //                     && e.target !== document.getElementById("card2")
 
     return(
         <div className="frontPage">
             <div id={'outer-container'} className="grid-container1"
             onClick={(e) => {
                 if(e.target !== document.getElementById(selectedId+"hovered")
-                    && e.target !== document.getElementById("card1")
-                    && e.target !== document.getElementById("card2")){
+                    && e.target !== document.getElementById(selectedId+"hoveredTitle")
+                    && e.target !== document.getElementById(selectedId+"hoveredContent")
+                    && stillPresent){
+                    stillPresent = false
                     setSelectedId(null)
                 }
 
@@ -80,6 +85,7 @@ function Frontpage(){
                 <div className={"pictureMe"}/>
                 {/*animate={{x: [0,100,0]}} transition={{ease: "easeOut", duration:1}}*/}
                 <AnimatePresence>
+                    {/*{const isPresent = useIsPresent()}*/}
                     {selectedId && (
                         <motion.div  id={selectedId+"hovered"} layoutId={selectedId+"layout"} className={"card-body card hoveredCard"}
                                      key={selectedId}
@@ -87,8 +93,9 @@ function Frontpage(){
                                      animate={{ opacity: 1}}
                                      exit={{ opacity: 0}}
                         >
-                            <motion.div className="card-title">{title}</motion.div>
-                            <motion.p className="card-text">{content}</motion.p>
+                            <motion.div id={selectedId+"hoveredTitle"} className="card-title">{title}</motion.div>
+                            <motion.p id={selectedId+"hoveredContent"} className="card-text">{content}</motion.p>
+                            {stillPresent = true}
                             {/*<motion.button onClick={() => setSelectedId(null)} >Close</motion.button>*/}
                         </motion.div>
 
