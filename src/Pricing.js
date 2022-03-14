@@ -31,15 +31,11 @@ let priceR3 = {
 }
 
 const cardArray = [priceR1, priceR2, priceR3];
-let value = 1
-let selected = 0
-
-
 
 
 const setSelected = (valueProp) => {
-    console.log(`${valueProp}listItem`)
-    document.getElementById(`${valueProp}listItem`).style.transform = "scale(1.05, 1.05)"
+    console.log(`$pr${valueProp}`)
+    document.getElementById(`pr${valueProp}`).style.transform = "scale(1.05, 1.05)"
 }
 
 const resetSelected = () => {
@@ -49,7 +45,7 @@ const resetSelected = () => {
 }
 
 function Pricing(){
-    const [_selected, _setSelected] = useState(0)
+    const [_selected, _setSelected] = useState(1)
 
     return(
         <div className={"pricing"}>
@@ -60,15 +56,15 @@ function Pricing(){
                     //     pri.setAttribute("margin", "0 5em 0 0")
                     //     pri.setAttribute( "overflow", "hidden")
                     // }
-
-                    if (_selected === 0) {
-                        _setSelected(0)
+                    console.log(_selected)
+                    if (_selected === 1) {
+                        _setSelected(1)
                         resetSelected()
                         setSelected(_selected)
                     }
-                    else if (_selected === 1 || _selected === 2 ) {
-                        _setSelected(_selected - 1)
+                    else if (_selected === 2 || _selected === 3 ) {
                         resetSelected()
+                        _setSelected(_selected - 1)
                         setSelected(_selected)
                     }
                 }}>
@@ -94,11 +90,11 @@ function Pricing(){
                 </div>
 
                 <div className={"arrowRight"} onClick={() => {
-                    if (_selected === 2 ){
+                    if (_selected === 3 ){
                         resetSelected()
                         setSelected(_selected)
                     }
-                    else if (_selected === 0 || _selected === 1){
+                    else if (_selected === 1 || _selected === 2){
                         _setSelected(_selected + 1)
                         resetSelected()
                         setSelected(_selected)
