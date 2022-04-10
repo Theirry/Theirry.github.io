@@ -16,7 +16,7 @@ const card1= {
        "Currently I am an Applied Informatics student at the university college of Erasmus in Brussels. This goes to show that I am an aspiring \n"+
        "Software Developer. \n"+
        "After graduating -in 2023- I am planning on working and meanwhile study for another bachelor."
-}
+};
 const card2 = {
     "id": "card2",
     "title": "So, what is this?",
@@ -24,8 +24,8 @@ const card2 = {
     "text": "At first I started making this portfolio by simply using HTML, CSS and JavaScript. After learning PHP in school\n" +
         "                        I made another version using that too. But after realising how much React JS is asced on the jobmarket, I decided to make the final version using\n" +
         "                            that."
-}
- const cardContent = [card1, card2]
+};
+const cardContent = [card1, card2];
 
 
 function getAge(dateString) {
@@ -49,13 +49,13 @@ function Frontpage(){
     const [content, setContent] = useState("");
     const [hasMore, setHasMore] = useState(true);
 
-    let stillPresent = false
+    let stillPresent = false;
     //&& e.target !== document.getElementById("card1")
     //                     && e.target !== document.getElementById("card2")
 
     //Infinite scroll
     let pageAt = 0;
-    let items = []
+    let items = [];
     // items.push(Frontpage);
     items.push(Projectpage);
     function loadFunc(){
