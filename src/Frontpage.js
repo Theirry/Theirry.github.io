@@ -1,10 +1,10 @@
 
 import React, {useState, Component} from 'react';
-import {Button, Card}  from 'react-bootstrap';
 import {useIsPresent, AnimatePresence, motion} from 'framer-motion';
 import "./Frontpage.css";
 import InfiniteScroll from "react-infinite-scroller";
 import Projectpage from "./Projectpage";
+import anime from 'animejs/lib/anime.es.js';
 
 
 const card1= {
@@ -26,7 +26,6 @@ const card2 = {
         "                            that."
 };
 const cardContent = [card1, card2];
-
 
 function getAge(dateString) {
     var today = new Date();
@@ -64,6 +63,19 @@ function Frontpage(){
             setHasMore(false);
         console.log(hasMore)
     }
+
+
+    anime({
+        targets: 'h1.introduction',
+        delay: anime.stagger(100),
+        direction: 'alternate',
+        rotate:{
+            value: '+=0.07turn',
+            duration: 1000,
+            easing: 'easeInOutQuad'
+        }
+
+    });
 
     return(
         <div className="frontPage">
@@ -131,7 +143,6 @@ function Frontpage(){
                 </AnimatePresence>
             </div>
         </div>
-
 
     )
 }
