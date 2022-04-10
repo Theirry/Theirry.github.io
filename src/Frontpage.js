@@ -1,8 +1,11 @@
 
-import React, {useState} from 'react';
+import React, {useState, Component} from 'react';
 import {Button, Card}  from 'react-bootstrap';
-import {useIsPresent, AnimatePresence, motion} from 'framer-motion'
+import {useIsPresent, AnimatePresence, motion} from 'framer-motion';
 import "./Frontpage.css";
+import InfiniteScroll from "react-infinite-scroller";
+import Projectpage from "./Projectpage";
+
 
 const card1= {
     "id": "card1",
@@ -36,19 +39,44 @@ function getAge(dateString) {
     return age;
 }
 
+
+
 function Frontpage(){
 
-    const [selectedId, setSelectedId] = useState("")
-    const [title, setTitle] = useState("")
-    const [itemClass, setItemClass] = useState("")
-    const [content, setContent] = useState("")
+    const [selectedId, setSelectedId] = useState("");
+    const [title, setTitle] = useState("");
+    const [itemClass, setItemClass] = useState("");
+    const [content, setContent] = useState("");
+    const [hasMore, setHasMore] = useState(true);
 
     let stillPresent = false
     //&& e.target !== document.getElementById("card1")
     //                     && e.target !== document.getElementById("card2")
 
+    //Infinite scroll
+    let pageAt = 0;
+    let items = []
+    // items.push(Frontpage);
+    items.push(Projectpage);
+    function loadFunc(){
+        pageAt += 1;
+        if (pageAt === 1)
+            setHasMore(false);
+        console.log(hasMore)
+    }
+
     return(
         <div className="frontPage">
+
+            <InfiniteScroll
+                pageStart={0}
+                loadMore={loadFunc}
+                hasMore={hasMore}
+                loader={<div className={"loader"} key={0}>Loading ...</div>}
+            >
+                {items}
+            </InfiniteScroll>
+
             <div id={'outer-container'} className="grid-container1"
             onClick={(e) => {
                 if(e.target !== document.getElementById(selectedId+"hovered")
