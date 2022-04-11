@@ -17,7 +17,6 @@
 
 }
 
-
 .intro{
     grid-area: Intro;
 }
@@ -33,9 +32,6 @@ h1.introduction{
     font-size: 3.5em;
 }
 
-.card-body{
-    padding:3em;
-}
 .card-title{
     font-size: 2em;
 }
@@ -48,7 +44,6 @@ h1.introduction{
     background-color: rgba(0, 0, 0, 0);
     color: white;
 }
-
 
 .pictureMe{
     grid-area: pictureMe;
@@ -84,9 +79,16 @@ h1.introduction{
     left:0;
     right:0;
 
-    height: fit-content;
-    width: 50em;
+    min-height: 20em;
+    max-height: fit-content;
+    width: 70em;
     margin: auto;
+
+    padding:3em;
+}
+
+.content_markup{
+    font-size: large;
 }
 
 
