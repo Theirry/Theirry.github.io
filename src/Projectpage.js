@@ -11,17 +11,22 @@ const cardCoursetimer = {
     "id": "cardCoursetimer",
     "class": "projCard",
     "title": "CourseTimer",
-    "text": "<p> CourseTimer is an app with an essential simple goal, making it possible to track the time I spend for any specific course." +
-        "\n Although it is still deep in production, it is already possible to make an account and start timing." +
-        "\n Later on I'd also like to add features as: graphics on which users can see how much they've studied per day, week, month, etc." +
-        " Download the CourseTimers apk from my github page, and try it for yourself. " +
-        "\n\n <a href='https://github.com/Theirry/CoursTimer/releases' target='_blank'>CourseTimer</a> <p>"
-};
+    "subtitle": "A timer app made entirely to my linking",
+    "text": "<br/>CourseTimer is an app with an essential simple goal, making it possible to track the time I spend for any specific course." +
+        "<br/> Although it is still deep in production, it is already possible to make an account and start timing." +
+        "<br/> Later on I'd also like to add features as: graphs on which users can see how much they've studied per day, week, month, etc." +
+        " <br/><br/> <b>Download the CourseTimers apk from my github page, and try it for yourself<b/>. <br/>" +
+        "<a href='https://github.com/Theirry/CoursTimer/releases' target='_blank'> CourseTimer</a>"
+
+};//<a href='https://github.com/Theirry/CoursTimer/releases' target='_blank'> CourseTimer</a>
 const cardUltimata = {
     "id": "cardUltimata",
     "class": "projCard",
     "title": "Discord bot: Ultimata",
-    "text": "This is all about ultimata"
+    "subtitle": "My ultimate Discord bot",
+    "text": "<br/><b>What is Ultimata?</b><br/><br/>" +
+        "Utimatly it is a conjoined vertion of all the Discord bots I had made till then.<br/>" +
+        "Ultimata thereby has numerous different functions. And almost all of them have one sing goal; making my day just that litle bit better."
 };
 const cardContent = [cardCoursetimer, cardUltimata];
 
@@ -29,6 +34,7 @@ function Projectpage(){
 
     const [selectedId, setSelectedId] = useState("");
     const [title, setTitle] = useState("");
+    const [subtitle, setSubtitle] = useState("");
     const [itemClass, setItemClass] = useState("");
     const [content, setContent] = useState("");
 
@@ -72,6 +78,7 @@ function Projectpage(){
                                              setTitle(item.title);
                                              setContent(item.text);
                                              setItemClass(item.class);
+                                             setSubtitle(item.subtitle);
                                              document.getElementById(item.id).setAttribute("animate", "{{opacity: 0}}")
                                              setSelectedId(item.id);
 
@@ -86,7 +93,7 @@ function Projectpage(){
                     <Box gridArea={'coursetimerPic'} id={'coursePic'}></Box>
                     <Box gridArea={'discordFrame'}>
                         {/*https://titanembeds.com/user/administrate_guild/963175225032339540*/}
-                        <iframe src="https://titanembeds.com/embed/963175225032339540" height="600" width="800" frameBorder="0"/>
+                        <iframe src="https://titanembeds.com/embed/963175225032339540" height="350" width="800" frameBorder="0"/>
                     </Box>
 
                 </Grid>
@@ -101,7 +108,7 @@ function Projectpage(){
                                  animate={{ opacity: 1}}
                                  exit={{ opacity: 0}}
                     >
-                        <motion.div id={selectedId+"hoveredTitle"} className="card-title">{title}</motion.div>
+                        <motion.div id={selectedId+"hoveredTitle"} className="card-title">{subtitle}</motion.div>
                         <motion.p id={selectedId+"hoveredContent"} className="card-text"><Markup className={'content_markup'} content={content}/></motion.p>
                         {stillPresent = true}
                         {/*<motion.button onClick={() => setSelectedId(null)} >Close</motion.button>*/}
