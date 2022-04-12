@@ -6,6 +6,7 @@ import InfiniteScroll from "react-infinite-scroller";
 import Projectpage from "./Projectpage";
 import anime from 'animejs/lib/anime.es.js';
 import {Markup} from "interweave";
+import {Box, Grid} from "grommet";
 
 
 const card1 = {
@@ -16,7 +17,8 @@ const card1 = {
                 "\n even though I have lived in Belgium for 13 years now. " +
        "Currently I am an Applied Informatics student at the university college of Erasmus in Brussels. This goes to show that I am an aspiring \n"+
        "Software Developer. \n"+
-       "After graduating -in 2023- I am planning on working and meanwhile study for another bachelor."
+       "After graduating -in 2023- I am planning on working and meanwhile study for another bachelor.",
+    "gap":"small"
 };
 const card2 = {
     "id": "card2",
@@ -25,7 +27,8 @@ const card2 = {
     "text": "At first I started making this portfolio by simply using HTML, CSS and JavaScript. After learning PHP in school\n" +
         "                        I made another version using that too. But after realising how much React JS is asced on the jobmarket, I decided to make the final version using\n" +
         "                            that." +
-        " Not lightweight, since made this to try out Reactjs and many other js libraries for myself."
+        " Not lightweight, since made this to try out Reactjs and many other js libraries for myself.",
+    "gap": "none"
 };
 const cardContent = [card1, card2];
 
@@ -91,7 +94,7 @@ function Frontpage(){
                 {items}
             </InfiniteScroll>
 
-            <div id={'outer-container'} className="grid-container1"
+            <div id={'outer_container'} className="grid-container1"
             onClick={(e) => {
                 if(e.target !== document.getElementById(selectedId+"hovered")
                     && e.target !== document.getElementById(selectedId+"hoveredTitle")
@@ -103,28 +106,46 @@ function Frontpage(){
 
             }}>
 
-                <div className={"intro"}>
-                    <h6 className={"introduction"}>Hello, I am</h6>
-                    <h1 className={"introduction"}>Thierry</h1>
-                    <h1 className={"introduction"} >Klougbo</h1>
-                </div>
+                <Grid className={"gromGrid"}
+                      areas={[
+                          {name: 'myname', start: [0, 0], end: [0, 0]},
+                          {name: 'picMe', start: [2, 0], end: [2, 0]},
+                          {name: 'card1', start:[0, 1], end: [1, 1]},
+                          {name: 'card2', start: [2, 1], end: [2, 2]}
+                      ]}
+                      columns={['small', 'medium', 'flex']}
+                      rows={['flex', 'flex', 'small']}
+                      gap={"small"}
+                >
 
-                {cardContent.map(item => (
-                    <motion.div  id={item.id} layoutId={item.id+"layout"} className={"card-body card " + item.class}
-                                 onClick={() => {
-                        setTitle(item.title);
-                        setContent(item.text);
-                        setItemClass(item.class);
-                        document.getElementById(item.id).setAttribute("animate", "{{opacity: 0}}")
-                        setSelectedId(item.id);
+                    {cardContent.map(item => (
+                        <Box gridArea={item.id} gap={item.gap}>
+                            <motion.div  id={item.id} layoutId={item.id+"layout"} className={"card-body card " + item.class}
+                                         onClick={() => {
+                                             setTitle(item.title);
+                                             setContent(item.text);
+                                             setItemClass(item.class);
+                                             document.getElementById(item.id).setAttribute("animate", "{{opacity: 0}}")
+                                             setSelectedId(item.id);
+                                         }}
+                            >
+                                <motion.div className="card-title">{item.title}</motion.div>
+                                <motion.div id={item.id + `_backim`} />
+                            </motion.div>
+                        </Box>
+                    ))}
 
-                    }}
-                    >
-                        <motion.div className="card-title">{item.title}</motion.div>
-                    </motion.div>
-                ))}
+                    <Box gridArea={'myname'} gap={"small"}>
+                        <div className={"intro"}>
+                            <h6 className={"introduction"}>Hello, I am</h6>
+                            <h1 className={"introduction"}>Thierry</h1>
+                            <h1 className={"introduction"} >Klougbo</h1>
+                        </div>
+                    </Box>
+                    <Box gridArea={'picMe'} className={"pictureMe"} animation={{type: "fadeIn", duration: 4000}} gap={"none"}/>
 
-                <div className={"pictureMe"}/>
+                </Grid>
+
                 {/*animate={{x: [0,100,0]}} transition={{ease: "easeOut", duration:1}}*/}
                 <AnimatePresence>
                     {/*{const isPresent = useIsPresent()}*/}

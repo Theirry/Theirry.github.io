@@ -1,21 +1,4 @@
 /*Inhoud*/
-.grid-container1{
-    display: grid;
-    grid-template-columns: 50% 25% 25%;
-    grid-template-rows: 25% 30% 20% 25%;
-    grid-template-areas:
-    'Intro pictureMe pictureMe'
-    'Who pictureMe pictureMe'
-    'What What What';
-
-    height: 100vh;
-    width: 99%;
-
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-    margin-top: 1em;
-
-}
 
 .intro{
     grid-area: Intro;
@@ -37,34 +20,24 @@ h1.introduction{
 }
 
 .whoIAm {
-    grid-area: Who;
-    margin-right: 0.5em;
-    height: fit-content;
-
     background-color: rgba(0, 0, 0, 0);
     color: white;
 }
 
 .pictureMe{
-    grid-area: pictureMe;
-    padding:0.2em;
-    background-color: rgba(0, 0, 0, 0);
-
-    background-image: url('./images/mepic4.png');
+    background-image: url('./images/mepic4_remove_colored-removebg-preview.png');
     background-repeat: no-repeat;
+    background-position: right;
 
-    background-position: center;
-    background-size: 95% 80%;
+    background-size: 100% 100%;
+    height: 30em;
+    width: 60em;
 }
 
 .whatIsThis{
-    grid-area: What;
-    padding-left: 1.5em;
-    margin:10px 0.5em 0 0;
-    height: fit-content;
-
     background-color: rgba(0, 0, 0, 0);
     color: white;
+    padding: 0;
 }
 
 /**Hovering cards**/

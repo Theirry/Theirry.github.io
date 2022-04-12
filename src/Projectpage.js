@@ -68,7 +68,6 @@ function Projectpage(){
                     columns={['medium', 'medium', 'flex']}
                     rows={['small', 'flex']}
                     gap='medium'
-
                     >
 
                     {cardContent.map(item => (
@@ -90,8 +89,8 @@ function Projectpage(){
                         </Box>
                     ))}
 
-                    <Box gridArea={'coursetimerPic'} id={'coursePic'}></Box>
-                    <Box gridArea={'discordFrame'}>
+                    <Box gridArea={'coursetimerPic'} id={'coursePic'} animation={{type: "fadeIn", duration: 2000}}/>
+                    <Box gridArea={'discordFrame'} animation={{type: "fadeIn", duration: 2000}}>
                         {/*https://titanembeds.com/user/administrate_guild/963175225032339540*/}
                         <iframe src="https://titanembeds.com/embed/963175225032339540" height="350" width="800" frameBorder="0"/>
                     </Box>
