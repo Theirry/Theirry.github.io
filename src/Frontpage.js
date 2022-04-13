@@ -33,10 +33,10 @@ const card2 = {
 const cardContent = [card1, card2];
 
 function getAge(dateString) {
-    var today = new Date();
-    var birthDate = new Date(dateString);
-    var age = today.getFullYear() - birthDate.getFullYear();
-    var m = today.getMonth() - birthDate.getMonth();
+    let today = new Date();
+    let birthDate = new Date(dateString);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    let m = today.getMonth() - birthDate.getMonth();
     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
         age--;
     }
@@ -52,6 +52,7 @@ function Frontpage(){
     const [itemClass, setItemClass] = useState("");
     const [content, setContent] = useState("");
     const [hasMore, setHasMore] = useState(true);
+    const [loaded, setLoaded] = useState(false);
 
     let stillPresent = false;
     //&& e.target !== document.getElementById("card1")
@@ -70,17 +71,21 @@ function Frontpage(){
     }
 
 
-    anime({
-        targets: 'h1.introduction',
-        delay: anime.stagger(100),
-        direction: 'alternate',
-        rotate:{
-            value: '+=0.07turn',
-            duration: 1000,
-            easing: 'easeInOutQuad'
-        }
-
-    });
+    if (!loaded) {
+        anime({
+            targets: 'h1.introduction',
+            delay: anime.stagger(100),
+            direction: 'alternate',
+            rotate: {
+                value: '+=0.07turn',
+                duration: 1000,
+                easing: 'easeInOutQuad'
+            },
+            completed: function (){
+                setLoaded(true);
+            }
+        });
+    }
 
     return(
         <div className="frontPage">

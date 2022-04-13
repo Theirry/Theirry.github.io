@@ -15,7 +15,7 @@ export default function Header(){
                 {/*<figure className="navlogo">
                     <img className="navlogoimage" src={logoimg} alt="Conpanny logo"/>
                 </figure>*/}
-                <h1 className="pageTitle" style={{color: "white"}}>Portfolio</h1>
+                {/*<h1 className="pageTitle" style={{color: "white"}}>Portfolio</h1>*/}
                 <ul className="linkbar">
                     <li className={"navitem"}>
                         <Link className={"navlink"} to="/"> <FaHome style={{marginRight: '10px', marginBottom: '5'}}/> Home</Link>
@@ -23,9 +23,9 @@ export default function Header(){
                     <li className={"navitem"}>
                         <Link className={"navlink"} to="/projects"> <FaRaspberryPi style={{marginRight: '10px', marginBottom: '5'}}/> Projects</Link>
                     </li>
-                    <li className={"navitem"}>
-                        <Link className={"navlink"} to={"/pricing"}><MdOutlinePriceCheck style={{marginRight: '10px', marginBottom: '5'}}/>Pricing</Link>
-                    </li>
+                    {/*<li className={"navitem"}>*/}
+                    {/*    <Link className={"navlink"} to={"/pricing"}><MdOutlinePriceCheck style={{marginRight: '10px', marginBottom: '5'}}/>Pricing</Link>*/}
+                    {/*</li>*/}
                     <li className={"navitem"}>
                         <Link className={"navlink"} to="/contactMe"><MdContactPage style={{marginRight: '10px', marginBottom: '5'}}/>Contact Me</Link>
                     </li>

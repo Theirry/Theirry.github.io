@@ -28,7 +28,7 @@ export default function contactPage(){
                         <label htmlFor="inputPhone">Phone</label>
                         <input type="text" className="form-control" id="inputPhone" required/>
                     </div>
-                    <div className="form-group col-md-4">
+                    {/*<div className="form-group col-md-4">
                         <label htmlFor="inputPrice">Price Range</label>
                         <select id="inputPrice" className="form-control" required>
                             <option selected>Choose...</option>
@@ -36,7 +36,7 @@ export default function contactPage(){
                             <option>Range 2</option>
                             <option>Range 3</option>
                         </select>
-                    </div>
+                    </div>*/}
                 </div>
 
                 <div className="form-row nameAndEmail projectdiv">
