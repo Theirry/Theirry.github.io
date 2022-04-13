@@ -1,24 +1,29 @@
 /*Inhoud*/
 
-.introduction{
-    color: white;
-    margin-left: 0.5em;
-    text-align: left;
+.frontPage{
+    height: 120vh;
 }
+
 h6.introduction{
+    color: white;
     margin-top: 0.5em;
+    font-size: 2em;
 }
-h1.introduction{
-    font-size: 3.5em;
+.letter{
+    font-weight: 900;
+    font-size: 3.25em;
+    color: #fff;
+
 }
 
 .card-title{
-    font-size: 2em;
+    font-size: 2.5em;
 }
 
 .whoIAm {
     background-color: rgba(0, 0, 0, 0);
     color: white;
+    justify-content: center;
 }
 
 .pictureMe{
@@ -35,6 +40,7 @@ h1.introduction{
     background-color: rgba(0, 0, 0, 0);
     color: white;
     padding: 0;
+    justify-content: center;
 }
 
 /**Hovering cards**/
@@ -60,5 +66,4 @@ h1.introduction{
 .content_markup{
     font-size: large;
 }
-
 

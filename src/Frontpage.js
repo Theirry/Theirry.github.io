@@ -70,22 +70,28 @@ function Frontpage(){
         console.log(hasMore)
     }
 
+    /**
+     * THIERRY KLOUGBO animation
+     */
+    anime.timeline({loop: true})
+        .add({
+            targets: '.ml12 .letter',
+            translateX: [40,0],
+            translateZ: 0,
+            opacity: [0,1],
+            easing: "easeInExpo",
+            duration: 500,
+            delay: (el, i) => 1000 + 30 * i
+        }).add({
+        targets: '.ml12 .letter',
+        translateX: [0,-30],
+        opacity: [1,0],
+        easing: "easeOutExpo",
+        duration: 1000,
+        delay: (el, i) => 10000 + 30 * i
+    });
 
-    if (!loaded) {
-        anime({
-            targets: 'h1.introduction',
-            delay: anime.stagger(100),
-            direction: 'alternate',
-            rotate: {
-                value: '+=0.07turn',
-                duration: 1000,
-                easing: 'easeInOutQuad'
-            },
-            completed: function (){
-                setLoaded(true);
-            }
-        });
-    }
+
 
     return(
         <div className="frontPage">
@@ -116,15 +122,16 @@ function Frontpage(){
                           {name: 'myname', start: [0, 0], end: [0, 0]},
                           {name: 'picMe', start: [2, 0], end: [2, 0]},
                           {name: 'card1', start:[0, 1], end: [1, 1]},
-                          {name: 'card2', start: [2, 1], end: [2, 2]}
+                          {name: 'card2', start: [2, 1], end: [2, 1]},
+                          {name: 'experties', start:[0, 2], end: [2, 2]}
                       ]}
                       columns={['small', 'medium', 'flex']}
-                      rows={['flex', 'flex', 'small']}
+                      rows={['medium', 'small', 'medium']}
                       gap={"small"}
                 >
 
                     {cardContent.map(item => (
-                        <Box gridArea={item.id} gap={item.gap}>
+                        <Box gridArea={item.id} >
                             <motion.div  id={item.id} layoutId={item.id+"layout"} className={"card-body card " + item.class}
                                          onClick={() => {
                                              setTitle(item.title);
@@ -135,19 +142,34 @@ function Frontpage(){
                                          }}
                             >
                                 <motion.div className="card-title">{item.title}</motion.div>
-                                <motion.div id={item.id + `_backim`} />
                             </motion.div>
                         </Box>
                     ))}
 
                     <Box gridArea={'myname'} gap={"small"}>
-                        <div className={"intro"}>
-                            <h6 className={"introduction"}>Hello, I am</h6>
-                            <h1 className={"introduction"}>Thierry</h1>
-                            <h1 className={"introduction"} >Klougbo</h1>
-                        </div>
+                        <h6 className={"introduction"}>Hello, I am</h6>
+                        <h1 className={"ml12"}>
+                            <span class='letter'>T</span>
+                            <span class='letter'>H</span>
+                            <span class='letter'>I</span>
+                            <span class='letter'>E</span>
+                            <span class='letter'>R</span>
+                            <span class='letter'>R</span>
+                            <span class='letter'>Y</span>
+                            <span class='letter'> </span>
+                            <span class='letter'>K</span>
+                            <span class='letter'>L</span>
+                            <span class='letter'>O</span>
+                            <span class='letter'>U</span>
+                            <span class='letter'>G</span>
+                            <span class='letter'>B</span>
+                            <span class='letter'>O</span>
+                        </h1>
+
                     </Box>
                     <Box gridArea={'picMe'} className={"pictureMe"} animation={{type: "fadeIn", duration: 4000}} gap={"none"}/>
+
+                    <Box gridArea={'experties'} className={"card-body card"}></Box>
 
                 </Grid>
 
