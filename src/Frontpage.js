@@ -7,6 +7,7 @@ import Projectpage from "./Projectpage";
 import anime from 'animejs/lib/anime.es.js';
 import {Markup} from "interweave";
 import {Box, Grid} from "grommet";
+import {Cube, Keyboard} from 'grommet-icons'
 
 
 const card1 = {
@@ -31,6 +32,13 @@ const card2 = {
     "gap": "none"
 };
 const cardContent = [card1, card2];
+
+let colorRed = "rgba(168, 50, 80, 0.75)";
+let colorOrange = "rgba(168, 105, 50, 0.80)";
+let colorYellow = "rgba(168, 153, 50, 0.85)";
+let colorBlack = "rgba(0, 0, 0, 0.25)"
+
+
 
 function getAge(dateString) {
     let today = new Date();
@@ -76,16 +84,16 @@ function Frontpage(){
     anime.timeline({loop: true})
         .add({
             targets: '.ml12 .letter',
-            translateX: [40,0],
+            translateX: [40, 0],
             translateZ: 0,
-            opacity: [0,1],
+            opacity: [0, 1],
             easing: "easeInExpo",
             duration: 500,
             delay: (el, i) => 1000 + 30 * i
         }).add({
         targets: '.ml12 .letter',
-        translateX: [0,-30],
-        opacity: [1,0],
+        translateX: [0, -30],
+        opacity: [1, 0],
         easing: "easeOutExpo",
         duration: 1000,
         delay: (el, i) => 10000 + 30 * i
@@ -127,7 +135,7 @@ function Frontpage(){
                       ]}
                       columns={['small', 'medium', 'flex']}
                       rows={['medium', 'small', 'medium']}
-                      gap={"small"}
+                      gap={"medium"}
                 >
 
                     {cardContent.map(item => (
@@ -169,7 +177,35 @@ function Frontpage(){
                     </Box>
                     <Box gridArea={'picMe'} className={"pictureMe"} animation={{type: "fadeIn", duration: 4000}} gap={"none"}/>
 
-                    <Box gridArea={'experties'} className={"card-body card"}></Box>
+                    <Box gridArea={'experties'} className={"card-body card"} id={"expertiesCard"}>
+                        <p className="card-title">My experties?</p>
+                        <div className={"skillDiv"}>
+                            <p className={"expTilte"}>Java:</p>
+                            <Keyboard className={"expCube"} size={"large"} color={colorRed}/>
+                            <Keyboard className={"expCube"} size={"large"} color={colorOrange}/>
+                            <Keyboard className={"expCube"} size={"large"} color={colorYellow}/>
+                            <Keyboard className={"expCube"} size={"large"} color={colorBlack}/>
+                            <Keyboard className={"expCube"} size={"large"} color={colorBlack}/>
+                        </div>
+                        <div className={"skillDiv"}>
+                            <p className={"expTilte"}>JS: </p>
+                            <Keyboard className={"expCube"} size={"large"} color={colorRed}/>
+                            <Keyboard className={"expCube"} size={"large"} color={colorOrange}/>
+                            <Keyboard className={"expCube"} size={"large"} color={colorYellow}/>
+                            <Keyboard className={"expCube"} size={"large"} color={colorBlack}/>
+                            <Keyboard className={"expCube"} size={"large"} color={colorBlack}/>
+                        </div>
+                        <div className={"skillDiv"}>
+                            <p className={"expTilte"}>HTML && CSS: </p>
+                            <Keyboard className={"expCube"} size={"large"} color={colorRed}/>
+                            <Keyboard className={"expCube"} size={"large"} color={colorOrange}/>
+                            <Keyboard className={"expCube"} size={"large"} color={colorYellow}/>
+                            <Keyboard className={"expCube"} size={"large"} color={colorBlack}/>
+                            <Keyboard className={"expCube"} size={"large"} color={colorBlack}/>
+                        </div>
+
+
+                    </Box>
 
                 </Grid>
 
