@@ -1,7 +1,12 @@
 /*Inhoud*/
 
 .frontPage{
-    height: 120vh;
+    min-height: 120vh;
+    overflow-block: hidden;
+}
+
+.gromGrid{
+    /*height: 100%;*/
 }
 
 h6.introduction{
