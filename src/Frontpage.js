@@ -34,9 +34,9 @@ const card2 = {
 const cardContent = [card1, card2];
 
 let colorRed = "rgba(168, 50, 80, 0.75)";
-let colorOrange = "rgba(168, 105, 50, 0.80)";
-let colorYellow = "rgba(168, 153, 50, 0.85)";
-let colorBlack = "rgba(0, 0, 0, 0.25)"
+let colorOrange = "rgba(168, 105, 50, 0.85)";
+let colorYellow = "rgba(168, 153, 50, 0.90)";
+let colorBlack = "rgba(0, 0, 0, 0.20)"
 
 
 
@@ -99,7 +99,14 @@ function Frontpage(){
         delay: (el, i) => 10000 + 30 * i
     });
 
-
+    anime({
+        targets: '.expCube',
+        translateX: anime.stagger(-10, {grid: [5, 3], from: 'center', axis: 'x'}),
+        translateY: anime.stagger(15, {grid: [5, 3], from: 'center', axis: 'y'}),
+        rotateZ: anime.stagger([0, 90], {grid: [5, 3], from: 'center', axis: 'x'}),
+        delay: anime.stagger(200, {grid: [5, 3], from: 'center'}),
+        easing: 'easeInOutQuad'
+    });
 
     return(
         <div className="frontPage">
