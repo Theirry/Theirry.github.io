@@ -14,11 +14,11 @@ const card1 = {
     "id": "card1",
     "class": "whoIAm",
     "title": "Who am I?",
-    "text": "As you may have noticed, my name is Thierry Klougbo. I am currently 22 years old, and originate from Togo (Africa) " +
-                "\n even though I have lived in Belgium for 13 years now. " +
-       "Currently I am an Applied Informatics student at the university college of Erasmus in Brussels. This goes to show that I am an aspiring \n"+
-       "Software Developer. \n"+
-       "After graduating -in 2023- I am planning on working and meanwhile study for another bachelor.",
+    "text": "<br/>As you may have noticed, my name is Thierry Klougbo. " +
+        "<br/>I am currently 22 years old, and originate from Togo (Africa) even though I have lived in Belgium for 13 years now." +
+       "<br/>Currently I am an Applied Informatics student at the university college of Erasmus in Brussels. " +
+        "<br/>This goes to show that I am an aspiring Software Developer."+
+       "<br/><br/>After graduating -in 2023- I am planning on working and meanwhile study for another bachelor.",
     "gap":"small"
 };
 const card2 = {
