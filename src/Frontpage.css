@@ -1,23 +1,40 @@
 /*Inhoud*/
 
+
 .frontPage{
-    min-height: 120vh;
+    height: 100%;
+    width: 100%;
     overflow-block: hidden;
+    display: inline-block;
+    position: relative;
+
+}
+#outer_container{
+    width: 100%;
+
 }
 
 .gromGrid{
     /*height: 100%;*/
+    max-width: 100%;
 }
+
 
 h6.introduction{
     color: white;
     margin-top: 0.5em;
     font-size: 2em;
 }
+
+
 .letter{
     font-weight: 900;
     font-size: 3.25em;
     color: #fff;
+
+}
+.StyledBox-sc-13pk1d4-0 {
+    max-width: 50%;
 
 }
 

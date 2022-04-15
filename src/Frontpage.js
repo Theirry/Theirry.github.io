@@ -164,21 +164,21 @@ function Frontpage(){
                     <Box gridArea={'myname'} gap={"small"}>
                         <h6 className={"introduction"}>Hello, I am</h6>
                         <h1 className={"ml12"}>
-                            <span class='letter'>T</span>
-                            <span class='letter'>H</span>
-                            <span class='letter'>I</span>
-                            <span class='letter'>E</span>
-                            <span class='letter'>R</span>
-                            <span class='letter'>R</span>
-                            <span class='letter'>Y</span>
-                            <span class='letter'> </span>
-                            <span class='letter'>K</span>
-                            <span class='letter'>L</span>
-                            <span class='letter'>O</span>
-                            <span class='letter'>U</span>
-                            <span class='letter'>G</span>
-                            <span class='letter'>B</span>
-                            <span class='letter'>O</span>
+                            <span className='letter'>T</span>
+                            <span className='letter'>H</span>
+                            <span className='letter'>I</span>
+                            <span className='letter'>E</span>
+                            <span className='letter'>R</span>
+                            <span className='letter'>R</span>
+                            <span className='letter'>Y</span>
+                            <span className='letter'> </span>
+                            <span className='letter'>K</span>
+                            <span className='letter'>L</span>
+                            <span className='letter'>O</span>
+                            <span className='letter'>U</span>
+                            <span className='letter'>G</span>
+                            <span className='letter'>B</span>
+                            <span className='letter'>O</span>
                         </h1>
 
                     </Box>
