@@ -16,7 +16,7 @@ const cardCoursetimer = {
         "<br/> Although it is still deep in production, it is already possible to make an account and start timing." +
         "<br/> Later on I'd also like to add features as: graphs on which users can see how much they've studied per day, week, month, etc." +
         " <br/><br/> <b>Download the CourseTimers apk from my github page, and try it for yourself<b/>. <br/>" +
-        "<a href='https://github.com/Theirry/Course-Timer-apk/releases/tag/v1.0.0-alpha' target='_blank'> CourseTimer</a>"
+        "<a href='https://github.com/Theirry/Course-Timer-apk/releases' target='_blank'> CourseTimer</a>"
 
 };//<a href='https://github.com/Theirry/CoursTimer/releases' target='_blank'> CourseTimer</a>
 const cardUltimata = {
